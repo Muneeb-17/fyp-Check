@@ -16,7 +16,7 @@ dotenv.config({ path: '../config.env' });
 app.use(cookieParser());
 const authenticate = require('../middleware/authenticate');
 app.use(express.urlencoded({ extended: true }));
-var dateTime = require('node-datetime');
+// var dateTime = require('node-datetime');
 
 
 
@@ -201,11 +201,11 @@ router.get('/logout', (req, res) => {
   res.clearCookie("jwt");
   res.redirect("/home");
 });
-function withoutTime(dateTime) {
-  var date = new Date(dateTime.getTime());
-  date.setHours(0, 0, 0, 0);
-  return date;
-}
+// function withoutTime(dateTime) {
+//   var date = new Date(dateTime.getTime());
+//   date.setHours(0, 0, 0, 0);
+//   return date;
+// }
 
 router.get('/getData', async (req, res) => {
   console.log('-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=--==-=----------------- getData');
